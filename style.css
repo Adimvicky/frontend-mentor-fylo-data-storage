@@ -17,11 +17,11 @@
 html {
 	font-size: 62.5%;
 }
-@media screen and (max-width : 43.75em){
+/* @media screen and (max-width : 43.75em){
 	html {
 		font-size: 61%;
 	}
-}
+} */
 body {
 	box-sizing: border-box;
 	font-family: Raleway, sans-serif;
@@ -127,6 +127,7 @@ ul {
 
 
 .card--storage {
+	padding: 3.5rem;
 	flex : 1 1 calc(60% - 3rem);
 	margin-left: 3rem;
 	position: relative;
@@ -143,12 +144,7 @@ ul {
 	}
 }
 .progress {
-	width: 80%;
-}
-@media screen and (max-width : 40.625em){
-	.progress {
-		width: 90%;
-	}
+	width: 93%;
 }
 progress {
 	width: 100%;
@@ -197,12 +193,12 @@ progress::-webkit-progress-value::after {
 
 .card--storage__callout {
 	position: absolute;
-	top: -5rem;
-	right: 3rem;
+	top: -4.5rem;
+	right: 4rem;
 
 	background-color: #fff;
 	border-radius: .8rem;
-	padding: 1.2rem 2.4rem;
+	padding: 1.4rem 2.6rem;
 	text-transform: uppercase;
 
 	display: flex;
@@ -225,6 +221,9 @@ progress::-webkit-progress-value::after {
 .card--storage__callout-main {
 	font-size: 3.4rem;
 	margin-right: .5rem;
+}
+.card--storage__callout-sub {
+	color: var(--color-grayish-blue);
 }
 
 @media screen and (max-width : 40.625em){
