@@ -1,0 +1,142 @@
+:root {
+	--color-gradient : to right ,hsl(6, 100%, 80%), hsl(335, 100%, 65%);
+	--color-pale-blue : hsl(243, 100%, 93%);
+	--color-grayish-blue : hsl(229, 7%, 55%);
+	--color-dark-blue :  hsl(228, 56%, 26%);
+	--color-dark-blue-2 :  hsl(228, 56%, 26%);
+}
+
+*,
+::before,
+::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	box-sizing: border-box;
+	font-family: Raleway, sans-serif;
+	font-weight: 400;
+	font-size: 1.4rem;
+	color: var(--color-pale-blue);
+	max-width: 144rem;
+}
+ul {
+	list-style: none;
+}
+.container {
+	height: 100vh;
+	width: 100%;
+	background-color: var(--color-dark-blue-2);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.container::after {
+	content : "";
+	position : absolute;
+	top : 50%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: url(./images/bg-desktop.svg);
+}
+
+.cards-container {
+	width : 70%;
+	margin: 0 auto;
+	position: absolute;
+	top : 50%;
+	transform : translateY(-50%);
+	margin : 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	position: relative;
+	z-index: 2;
+}
+
+.card {
+	background-color: var(--color-dark-blue);
+	border-radius: .8em;
+	box-shadow: 0 0 3px 1.3px rgba(0,0,0,.4);
+	padding: 4rem;
+}
+
+.card--fylo {
+	flex : 1 1 30%;
+	/* margin-right: 2rem; */
+	border-top-right-radius: 10rem;
+}
+.logo {
+	width: 75%;
+}
+.card--fylo__content {
+	max-width: 16rem;
+}
+.card--fylo__icons {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 3.2rem;
+}
+.card--fylo__icon {
+	background-color: #000;
+	width : 4.3rem;
+	height: 4.3rem;
+	border-radius: 1rem;
+
+	display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.card--storage {
+	flex : 1 1 calc(60% - 3rem);
+	margin-left: 3rem;
+}
+progress {
+	width: 80%;
+    height: 2rem;
+    margin: 1rem 0;
+	-webkit-appearance: none;
+	border-radius: 100px;
+
+}
+progress::-webkit-progress-bar {
+	background-color: rgba(0,0,0,.4);
+	border-radius: 100px;
+}
+progress::-webkit-progress-value {
+	border-radius: 100px;
+	background-image: linear-gradient(var(--color-gradient));
+	position: relative;
+}
+
+progress::-webkit-progress-value::after {
+	content : "";
+	position: absolute;
+	top : .7rem;
+	right : .7rem;
+	width: .6rem;
+	height: .6rem;
+	border-radius: 100%;
+	background-color: #fff;
+}
+
+/* UTILITY */
+.text-white {
+	color: #fff;
+}
+.text-bold {
+	font-weight: 700;
+}
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
