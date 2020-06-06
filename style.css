@@ -19,7 +19,7 @@ html {
 }
 @media screen and (max-width : 43.75em){
 	html {
-		font-size: 60%;
+		font-size: 61%;
 	}
 }
 body {
@@ -155,13 +155,23 @@ progress {
     height: 2rem;
     margin: 2rem 0 1rem 0;
 	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	border-radius: 100px;
+	border : none;
 
 }
 progress::-webkit-progress-bar {
 	background-color: rgba(0,0,0,.4);
 	border-radius: 100px;
 }
+progress::-moz-progress-bar {
+	border-radius: 100px;
+	background-image: linear-gradient(var(--color-gradient));
+	background-color: rgba(0,0,0,.4);
+
+}
+
 progress::-webkit-progress-value {
 	border-radius: 100px;
 	background-image: linear-gradient(var(--color-gradient));
