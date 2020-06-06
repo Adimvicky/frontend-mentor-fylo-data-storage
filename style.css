@@ -4,6 +4,7 @@
 	--color-grayish-blue : hsl(229, 7%, 55%);
 	--color-dark-blue :  hsl(228, 56%, 26%);
 	--color-dark-blue-2 :  hsl(228, 56%, 26%);
+	--mobile-view : 40.625em;
 }
 
 *,
@@ -15,6 +16,11 @@
 }
 html {
 	font-size: 62.5%;
+}
+@media screen and (max-width : 43.75em){
+	html {
+		font-size: 60%;
+	}
 }
 body {
 	box-sizing: border-box;
@@ -43,15 +49,21 @@ ul {
 	right: 0;
 	bottom: 0;
 	background-image: url(./images/bg-desktop.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+@media screen and (max-width : 40.625em){
+	.container::after {
+		top : 0;
+		background-position: 30%;
+	}
 }
 
 .cards-container {
 	width : 70%;
-	margin: 0 auto;
-	position: absolute;
+	margin : 0 auto;
 	top : 50%;
 	transform : translateY(-50%);
-	margin : 0 auto;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
@@ -59,11 +71,29 @@ ul {
 	z-index: 2;
 }
 
+@media screen and (max-width : 62.5em){
+	.cards-container {
+		width: 90%;
+	}
+}
+@media screen and (max-width : 40.625em){
+	.cards-container {
+		width: 80%;
+		flex-direction: column;
+		align-items: stretch;
+	}
+}
+
 .card {
 	background-color: var(--color-dark-blue);
 	border-radius: .8em;
-	box-shadow: 0 0 3px 1.3px rgba(0,0,0,.4);
+	box-shadow: 0 0 3px 1.3px rgba(0,0,0,.15);
 	padding: 4rem;
+}
+@media screen and (max-width : 40.625em){
+	.card {
+		padding : 4rem 3rem;
+	}
 }
 
 .card--fylo {
@@ -100,9 +130,25 @@ ul {
 	flex : 1 1 calc(60% - 3rem);
 	margin-left: 3rem;
 	position: relative;
+
+	display: flex;
+	flex-direction: column;
+}
+@media screen and (max-width : 40.625em){
+	.card--storage {
+		margin: 2rem 0;
+		flex: 1;
+
+		align-items: center;
+	}
 }
 .progress {
 	width: 80%;
+}
+@media screen and (max-width : 40.625em){
+	.progress {
+		width: 90%;
+	}
 }
 progress {
 	width: 100%;
@@ -153,6 +199,8 @@ progress::-webkit-progress-value::after {
 	align-items: center;
 	justify-content: space-between;
 }
+
+
 .card--storage__callout::after {
 	content : "";
 	position : absolute;
@@ -169,6 +217,19 @@ progress::-webkit-progress-value::after {
 	margin-right: .5rem;
 }
 
+@media screen and (max-width : 40.625em){
+	.card--storage__callout {
+		top: initial;
+		right: initial;
+		bottom : -3rem;
+		left : 50%;
+		transform : translateX(-50%);
+	}
+	.card--storage__callout::after {
+		display: none;
+	}
+}
+
 
 /* UTILITY */
 .text-white {
@@ -183,11 +244,11 @@ progress::-webkit-progress-value::after {
 
 
 .attribution {
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 	text-align: center;
 	position : absolute;
 	left : 50%;
-	bottom : 5%;
+	bottom : 1%;
 	transform: translateX(-50%);
 	z-index: 3;
  }
